@@ -12,7 +12,8 @@ Here I share different types of video game and app projects to improve my skills
 
 ⚠️ **Important Note:** I upload here my portfolio with all the information like projects, personal information and more stuff.
 
-<a href= "https://victorcn2006.github.io/mi-portfolio/"></a>
+[Mi Portfolio](https://victorcn2006.github.io/mi-portfolio/)
+
 ---
 
 ### 📊 GitHub Stats
