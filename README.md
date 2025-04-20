@@ -10,6 +10,9 @@
 Welcome to my humble digital workspace!  
 Here I share different types of video game and app projects to improve my skills and knowledge 🚀
 
+⚠️ **Important Note:** I upload here my portfolio with all the information like projects, personal information and more stuff.
+
+<a href= "https://victorcn2006.github.io/mi-portfolio/"></a>
 ---
 
 ### 📊 GitHub Stats
