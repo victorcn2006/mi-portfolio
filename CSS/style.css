@@ -1,7 +1,441 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    font-family: "Kanit", sans-serif;
+    box-sizing: border-box;
 }
-body{
+
+a {
+    text-decoration: none;
+}
+
+body {
     background-color: var(--body-color);
+}
+
+body.light {
+    --body-color: #ffffff;
+    --sidebar-color: #DC143C;
+    --primary-color: #3498db;
+    --primary-color-light: #F6F5FF;
+    --secondary-color: #2ecc71;
+    --accent-color: #f39c12;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --link-color: #1abc9c;
+    --hover-color: #e74c3c;
+    --border-color: #95a5a6;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --toggle-color: #f4b7aa;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.layout {
+    display: flex;
+}
+
+.main-content {
+    margin-left: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 100vh;
+}
+
+/* ========SIDEBAR======== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--sidebar-color);
+    padding: 10px 14px;
+    color: var(--white-color);
+}
+
+.sidebar header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .text {
+    transition: opacity 0.3s ease;
+}
+
+/* ========SIDEBAR ICONS======== */
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* ========SIDEBAR LOGO======== */
+.sidebar .image-text img {
+    width: 80px;
+    border-radius: 6px;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+/* ========SIDEBAR TEXT======== */
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-text .header-text {
+    margin-left: 10px;
+}
+
+.header-text .name {
+    font-weight: 800;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    margin-right: 0px;
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.sidebar li a {
+    text-decoration: none;
+}
+
+/* ========SIDEBAR ICONS======== */
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--white-color);
+    transition: var(--tran-02);
+}
+
+
+.search-box input {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    padding: 2px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.sidebar.close .search-box input {
+    opacity: 0;
+    pointer-events: none;
+    /* Evita que el usuario siga interactuando */
+}
+
+/* ========SIDEBAR LINKS======== */
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+.menu-bar .mode {
+    background: var(--sidebar-color);
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i {
+    position: absolute;
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.toggle-switch switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background-color: var(--primary-color-light);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+
+body.light .switch::before {
+    left: 28px;
+}
+
+/* ========SIDEBAR======== */
+
+/* ========CONTACT======== */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+}
+
+.contact-title h2 {
+    flex: 1;
+    color: #3498db;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========CONTACT ICONS======== */
+.contact-left i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    /* Ajusta el tamaño del círculo */
+    height: 50px;
+    /* Ajusta el tamaño del círculo */
+    border-radius: 50%;
+    /* Esto hace el círculo */
+    border: 5px solid #3498db;
+    /* Borde azul */
+    background-color: #fff;
+    /* Fondo blanco */
+    font-size: 24px;
+    /* Tamaño del icono */
+    margin-right: 10px;
+    /* Espacio entre los iconos */
+    transition: all 0.3s ease;
+    /* Transición suave para el hover */
+}
+
+.contact-left i:hover {
+    background-color: #3498db;
+    /* Fondo azul al pasar el ratón */
+    color: #fff;
+    /* Cambiar el color del icono a blanco */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+    /* Espacio entre icono y texto */
+}
+
+.contact-info span {
+    font-size: 18px;
+    color: var(--white-color);
+    /* Usa la variable o pon un color directamente */
+}
+
+.contact-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #3498db;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-right textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-right button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: var(--white-color);
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+}
+
+.sidebar .image img {
+    width: 60px;
+    /* o lo que se vea bien: 30px, 50px, etc. */
+    height: auto;
+    /* mantiene proporción */
+    object-fit: contain;
+}
+
+
+.text-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-section h1 {
+    color: var(--title-color);
+}
+
+.text-section p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* CSS */
+.download {
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+
+    background: #6E6D70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px
+    rgba(0, 0, 0, 0.12);
+    color: #DFDEDF;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    flex-direction: column;
+}
+
+.download:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px
+    rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+.icons{
+    width: 80px;
+    height: 80px;
 }
