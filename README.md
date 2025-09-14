@@ -43,7 +43,8 @@ class WhoAmI:
         'Writing', 
         'Coding',
         'Reading',
-        'Listening to music'
+        'Listening to music',
+        'Calisthenics'
     ]
 
     def getCity():
