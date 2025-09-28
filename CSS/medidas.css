@@ -1,6 +1,22 @@
-.padding20{
-    padding: 20px;
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
 }
 .marginbtm20{
     margin-bottom: 20px;
+}
+.padding5{
+    padding: 5px;
+}
+.button{
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+.photo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
